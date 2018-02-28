@@ -1,9 +1,5 @@
 package com.main.java.ngt.mts2;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import org.slf4j.Logger;
@@ -110,48 +106,12 @@ public class SbMultithreadStepEg2Application {
 
 	public static void main(String[] args) {
 		long time = System.currentTimeMillis();
-		System.out.println(isPalindromeItr("TEET"));
-		System.out.println(isPalindrome("TEST"));
-		//SpringApplication.run(SbMultithreadStepEg2Application.class, args);
+		SpringApplication.run(SbMultithreadStepEg2Application.class, args);
 		time = System.currentTimeMillis() - time;
-		//logger.info("Runtime: {} seconds.", ((double)time/1000));
-		System.out.println("Runtime: {} seconds." +((double)time));
-	}
-	
+		logger.info("Runtime: {} seconds.", ((double)time/1000));
+		
+	}	
 
-	    public static boolean isPalindromeItr(String word) {
-	    	if(word.length()<=0){
-	        	return false;
-	        }
-	        StringBuilder sb = new StringBuilder();
-	        char[] wordchar = word.toCharArray();
-	        for (int i = wordchar.length-1; i >= 0 ; i--) {
-	        	sb.append(wordchar[i]);
-				
-			}
-	        return word.equalsIgnoreCase(sb.toString());	        
-	    }
-	    
-	    public static boolean isPalindrome(String input) {
-	        if (input == null) {
-	            return false;
-	        }
-	        String reversed = reverse(input);
-
-	        return input.equals(reversed);
-	    }
-
-	    public static String reverse(String str) {
-	        if (str == null) {
-	            return null;
-	        }
-
-	        if (str.length() <= 1) {
-	            return str;
-	        }
-
-	        return reverse(str.substring(1)) + str.charAt(0);
-	    }
-	   
+	  
 	    
 }
